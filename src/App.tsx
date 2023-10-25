@@ -1,11 +1,35 @@
 import "./App.css";
 import { useLocation } from "react-router-dom";
+import ReactPlayer from "react-player";
 
 export default function App() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const param1 = queryParams.get("link");
-  console.log(`link = ${param1} -- ${Date.now()}`);
+  const link = queryParams.get("link") as string;
+  console.log(`link = ${link}`);
 
-  return <div id="main"></div>;
+  return (
+    <div id="main">
+      <ReactPlayer
+        url={link}
+        controls={false}
+        playing={true}
+        playsinline={true}
+        volume={1}
+        onReady={(e) => {
+          const player = e.getInternalPlayer();
+          player.playVideo();
+
+          console.log(`onReady `, player);
+        }}
+        config={{
+          vimeo: {
+            playerOptions: {
+              autoplay: true,
+            },
+          },
+        }}
+      />
+    </div>
+  );
 }
