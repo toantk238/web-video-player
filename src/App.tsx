@@ -20,8 +20,6 @@ export default function App() {
         playing={true}
         playsinline={true}
         volume={1}
-        width="100%"
-        height="100%"
         onReady={(e) => {
           const player = e.getInternalPlayer();
           player.playVideo();

@@ -1,18 +1,13 @@
 #root {
   /* max-width: 1280px; */
-  /* margin: 0 auto; */
   /* padding: 2rem; */
   /* text-align: center; */
 }
 
 .player-wrapper {
-  position: relative;
-  /* padding-top: 56.25%;  */
 }
 
 .react-player {
-  position: relative;
-  padding-top: 5.25%; 
 }
 
 .logo {
