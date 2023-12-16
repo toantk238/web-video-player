@@ -9,13 +9,19 @@ export default function App() {
   console.log(`link = ${link}`);
 
   return (
-    <div id="main">
+    <div 
+      id="main" 
+      className="player-wrapper"
+    >
       <ReactPlayer
+        className="react-player"
         url={link}
         controls={false}
         playing={true}
         playsinline={true}
         volume={1}
+        width="100%"
+        height="100%"
         onReady={(e) => {
           const player = e.getInternalPlayer();
           player.playVideo();
